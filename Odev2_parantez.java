@@ -36,16 +36,15 @@ class Stack {
         
     }
 }
+public class odev2_parantez {
 
-public class Yigit {
-
-    static boolean isMatchingPair(char character1, char character2) 
+    static boolean eslesme(char c1, char c2) 
     { 
-       if (character1 == '(' && character2 == ')') 
+       if (c1 == '(' && c2 == ')') 
          return true; 
-       else if (character1 == '{' && character2 == '}') 
+       else if (c1 == '{' && c2 == '}') 
          return true; 
-       else if (character1 == '[' && character2 == ']') 
+       else if (c1 == '[' && c2 == ']') 
          return true; 
        else
          return false; 
@@ -62,7 +61,7 @@ public class Yigit {
           { 
              if (st.isEmpty())               
                    return false; 
-             else if ( !isMatchingPair(st.pop(), exp.charAt(i)) )               
+             else if ( !eslesme(st.pop(), exp.charAt(i)) )               
                    return false; 
                 
           } 
@@ -71,7 +70,7 @@ public class Yigit {
         return st.isEmpty();    
     }  
     public static void main(String[] args) {
-        String S= "{([)]}"; 
+        String S= "{()}[]"; 
           if (dengelimi(S)) 
             System.out.println("Dengeli parantez "); 
           else
